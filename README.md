@@ -4,13 +4,15 @@ Creates a decryption of a Vigenere cipher using statistical methods.
 A vigenere cipher is way of encoding and decoding using polyalphabetic substitution.  The wikipedia page for it explains 
 the base concept fairly well: https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher.
 
-## Single Substituion Cipher
+## Theory
+
+### Caesar Cipher
 
 A typical single substitution cipher (Caesar Cipher) can be easily broken using a statistical analysis of the alphabet. The idea is to test each shift
 of the key; the key whose decryption has alphabet frequencies which closely match that of English (or desired language), that key is the answer.
 This simple analysis is done using the chi-squared formula.
 
-### Chi Sqaured Formula
+#### Chi Sqaured Formula
 
 ![Chi Square Formula](http://practicalcryptography.com/media/latex/a84276327c1973a55df72cf4432ba17ca75231ac-11pt.png)
 
@@ -19,9 +21,9 @@ The "C" stands for the actual count of a certain letter in the encrypted string.
 the chi square formula is checking the amount of error in letter frequency (real - theoretical) as a pecentage of the theoretical frequency. The shift that produces 
 the lowest sum is the correct key value.**  Read more about it here: [Chi Sqaured Explanation](http://practicalcryptography.com/cryptanalysis/text-characterisation/chi-squared-statistic/)
 
-## Breaking the Vigenere Cipher
+### Breaking the Vigenere Cipher
 
-What makes the vigenere cipher harder to crack than the single substution cipher is that the frequency of the letters is more flat across the encrypted string.  
+The Vigenere cipher is harder to crack than the Caesar cipher.  The longer key ensures a  
 
 ![Vigenere Frequency Graph](https://sites.google.com/site/kidicrypt/vigenere-cipher/Vigf1.png?attredirects=0)
 
