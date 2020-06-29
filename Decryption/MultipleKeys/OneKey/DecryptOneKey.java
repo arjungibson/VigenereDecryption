@@ -22,7 +22,7 @@ public class DecryptOneKey
 
     private void setChiSquaredMap(String encryptedInput, Language language)
     {
-
+        //fake sum is there to prevent zeros from entering the map
         double fakeSum = 500000.0;
 
         for (int key = 0; key < keyRange.upperEndpoint(); key++)
