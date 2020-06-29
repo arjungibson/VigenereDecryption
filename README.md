@@ -15,9 +15,9 @@ This simple analysis is done using the chi-squared formula.
 ![Chi Square Formula](http://practicalcryptography.com/media/latex/a84276327c1973a55df72cf4432ba17ca75231ac-11pt.png)
 
 The "C" stands for the actual count of a certain letter in the encrypted string.  The "E" stands for the expected frequency of the letter.  For instance, if there are
-100 characters in the encrypted string and the theoretical frequency (0-1) of the letter is .167, then "E" would be 16.7. In essense, 
+100 characters in the encrypted string and the theoretical frequency (0-1) of the letter is .167, then "E" would be 16.7. **In essense, 
 the chi square formula is checking the amount of error in letter frequency (real - theoretical) as a pecentage of the theoretical frequency. The shift that produces 
-the lowest sum is the correct key value.  Read more about it here: [Chi Sqaured Explanation](http://practicalcryptography.com/cryptanalysis/text-characterisation/chi-squared-statistic/)
+the lowest sum is the correct key value.**  Read more about it here: [Chi Sqaured Explanation](http://practicalcryptography.com/cryptanalysis/text-characterisation/chi-squared-statistic/)
 
 ## Breaking the Vigenere Cipher
 
