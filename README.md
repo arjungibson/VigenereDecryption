@@ -23,17 +23,25 @@ the lowest sum is the correct key value.**  Read more about it here: [Chi Sqaure
 
 ### Breaking the Vigenere Cipher
 
-The Vigenere cipher is harder to crack than the Caesar cipher.  The longer key ensures a more flat distribution of letters which makes it impervious to an pure chi-squred attack.  The graph below demonstrates this concept with the right graph (Vigenere Cipher) having a flatter distribution then the left graph (Normal English Alphabet).
+The Vigenere cipher is harder to crack than the Caesar cipher.  The longer key ensures a more flat distribution of letters which makes it impervious to an pure chi-squred attack.  The graph below demonstrates this concept with the right graph (Vigenere Cipher) having a flatter distribution then the left graph (Caesar Cipher).
 
-![Vigenere Frequency Graph](https://sites.google.com/site/kidicrypt/vigenere-cipher/Vigf1.png?attredirects=0)
+![Caesar Cipher Frequency Graph](http://practicalcryptography.com/media/cryptanalysis/files/ss_graph.png)
+![Vigenere Frequency Graph](http://practicalcryptography.com/media/cryptanalysis/files/vg_graph.png)
 
 In order to break the Vigenere cipher, the cipher must be broken into smaller substrings.  These substrings have a normal distribution which can then be attacked with the 
 Chi-squared formula. The number of substrings is determined by the key length.  For example, a key length of 5 is broken into 5 substrings.  I used a combination of two methods to find the key length.
 
 #### Index of Coincidence
 
-The index of coincidence 
+The [index of coincidence](http://practicalcryptography.com/cryptanalysis/text-characterisation/index-coincidence/) is a good way to estimate the key length.  The index of coincidence desecribes the probability that two letters are alike.  For a Vignere cipher, that probablity is lower across the entire string.  But when the substrings are tested for each key length, the key length where the average index of coincidence for each substring is near 0.067 is likely the correct key length.
 
+![Index of Coincidence](http://practicalcryptography.com/media/latex/349fc3dc60622fffc17144839e45e61b8d0e7676-11pt.png)
 
+##### Friedman Method
+
+There is a variation on the index of coincidence to provide a close estimate of the actual key.  This method works best when the key is short.  The reason this method was used vs a pure index of coincidence is that it doesn't require several calulations across several key lengths.  It uses the index of coincidence for the entire string.
+The equation used is shown below:
+
+![Friedman Method](https://i.imgur.com/gfUzdGn.jpg)
 
 ![Twist of C](https://i.imgur.com/dZszhLF.jpg)
