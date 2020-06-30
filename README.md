@@ -37,14 +37,57 @@ The [index of coincidence](http://practicalcryptography.com/cryptanalysis/text-c
 
 ![Index of Coincidence](http://practicalcryptography.com/media/latex/349fc3dc60622fffc17144839e45e61b8d0e7676-11pt.png)
 
-##### Friedman Method
+#### Friedman Method
 
 There is a variation on the index of coincidence to provide a close estimate of the actual key.  This method works best when the key is short.  The reason this method was used vs a pure index of coincidence is that it doesn't require several calulations across several key lengths.  It uses the index of coincidence for the entire string.
 The equation used is shown below:
 
 <p align="left">
-  <img width="250" height="250" src="https://i.imgur.com/gfUzdGn.jpg width">
+  <img width="300" height="250" src="https://i.imgur.com/gfUzdGn.jpg width">
 </p>
 
-### Twist Plus Key
+#### Twist Plus Key
+
+The answer of the Friedman method must be further refined in order to consistently and currently find the key length.  The way this program accomplishes that task is by using the twist method.  It starts out with a twist of C:
+
 ![Twist of C](https://i.imgur.com/dZszhLF.jpg)
+
+The c is the frequency of each letter and is from 0-1.  These frequencies are ordered, split in half, and each half is summed.  The smaller sum is subtracted from the larger sum.  The smaller the twist, the flatter the frequency.  This twist is done for each substring and the twists are summed for each key length.
+
+
+<p align="left">
+  <img width="400" height="75" src="https://i.imgur.com/2oz6z1c.jpg">
+</p>
+
+The M is the encoded message and m is the key length attempt.  The idea is to find where the value m where T is at its maximum.  The problem with this base method is that it does provide a way to determine the key length vs its multiples.  For example, 5 is the key length but m=10 has a higher T value.  Therefore, an improvement on the method called twist plus was used in this program.  It looks for the key length that is preceeded by the greatest increase.
+
+<p align="left">
+  <img width="300" height="75" src="https://i.imgur.com/u8I9zMo.jpg">
+</p>
+
+<p align="left">
+  <img width="400" height="75" src="https://i.imgur.com/KmJhxBd.jpg">
+</p>
+
+The m that has the greatest twist plus answer is generally the key length.
+
+## Program Information
+
+There are two way to decrypt in this program:
+
+```java
+System.out.println(DecryptUnknownKeyLength.decryptForAllKeys(encryptedInput, Language.FRENCH));
+```
+
+And
+
+```java
+DecryptUnknownLanguage.decryptUnknownLanguage(encryptedInput);
+```
+
+The first method is excellent if you already know the language. 
+
+
+This program supports decryption in several languages: English, French, German, Dutch, Danish, Portuguese, Spanish, and Italian.  These languages can only be decrypted if they were encrypted using just the 26 letters of the English alphabet.
+
+
