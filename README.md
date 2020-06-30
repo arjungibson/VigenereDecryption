@@ -42,6 +42,7 @@ The [index of coincidence](http://practicalcryptography.com/cryptanalysis/text-c
 There is a variation on the index of coincidence to provide a close estimate of the actual key.  This method works best when the key is short.  The reason this method was used vs a pure index of coincidence is that it doesn't require several calulations across several key lengths.  It uses the index of coincidence for the entire string.
 The equation used is shown below:
 
-![Friedman Method](https://i.imgur.com/gfUzdGn.jpg)
+<img align="left" width="250" height="250" src="https://i.imgur.com/gfUzdGn.jpg width">
 
+### Twist Plus Key
 ![Twist of C](https://i.imgur.com/dZszhLF.jpg)
