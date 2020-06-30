@@ -23,10 +23,17 @@ the lowest sum is the correct key value.**  Read more about it here: [Chi Sqaure
 
 ### Breaking the Vigenere Cipher
 
-The Vigenere cipher is harder to crack than the Caesar cipher.  The longer key ensures a  
+The Vigenere cipher is harder to crack than the Caesar cipher.  The longer key ensures a more flat distribution of letters which makes it impervious to an pure chi-squred attack.  The graph below demonstrates this concept with the right graph (Vigenere Cipher) having a flatter distribution then the left graph (Normal English Alphabet).
 
 ![Vigenere Frequency Graph](https://sites.google.com/site/kidicrypt/vigenere-cipher/Vigf1.png?attredirects=0)
 
-Therefore, the key length must be known in order to split the original encrypted string into smaller strings that can cracked using the chi-squared formula.
+In order to break the Vigenere cipher, the cipher must be broken into smaller substrings.  These substrings have a normal distribution which can then be attacked with the 
+Chi-squared formula. The number of substrings is determined by the key length.  For example, a key length of 5 is broken into 5 substrings.  I used a combination of two methods to find the key length.
+
+#### Index of Coincidence
+
+The index of coincidence 
+
+
 
 ![Twist of C](https://i.imgur.com/dZszhLF.jpg)
