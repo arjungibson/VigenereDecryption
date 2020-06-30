@@ -85,8 +85,7 @@ And
 DecryptUnknownLanguage.decryptUnknownLanguage(encryptedInput);
 ```
 
-The first method is excellent if you already know the language. 
-
+The first method is excellent if you already know the language (aka much faster). 
 
 This program supports decryption in several languages: English, French, German, Dutch, Danish, Portuguese, Spanish, and Italian.  These languages can only be decrypted if they were encrypted using just the 26 letters of the English alphabet.
 
