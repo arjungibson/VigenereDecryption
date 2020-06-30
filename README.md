@@ -4,6 +4,24 @@ Creates a decryption of a Vigenere cipher using statistical methods.
 A vigenere cipher is way of encoding and decoding using polyalphabetic substitution.  The wikipedia page for it explains 
 the base concept fairly well: https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher.
 
+## Program Information
+
+There are two way to decrypt in this program:
+
+```java
+System.out.println(DecryptUnknownKeyLength.decryptForAllKeys(encryptedInput, Language.FRENCH));
+```
+
+And
+
+```java
+DecryptUnknownLanguage.decryptUnknownLanguage(encryptedInput);
+```
+
+The first method is excellent if you already know the language (aka much faster). 
+
+This program supports decryption in several languages: English, French, German, Dutch, Danish, Portuguese, Spanish, and Italian.  These languages can only be decrypted if they were encrypted using just the 26 letters of the English alphabet.
+
 ## Theory
 
 ### Caesar Cipher
@@ -70,23 +88,5 @@ The M is the encoded message and m is the key length attempt.  The idea is to fi
 </p>
 
 The m that has the greatest twist plus answer is generally the key length.
-
-## Program Information
-
-There are two way to decrypt in this program:
-
-```java
-System.out.println(DecryptUnknownKeyLength.decryptForAllKeys(encryptedInput, Language.FRENCH));
-```
-
-And
-
-```java
-DecryptUnknownLanguage.decryptUnknownLanguage(encryptedInput);
-```
-
-The first method is excellent if you already know the language (aka much faster). 
-
-This program supports decryption in several languages: English, French, German, Dutch, Danish, Portuguese, Spanish, and Italian.  These languages can only be decrypted if they were encrypted using just the 26 letters of the English alphabet.
 
 
